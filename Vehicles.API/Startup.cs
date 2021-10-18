@@ -60,10 +60,6 @@ namespace Vehicles.API
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
