@@ -23,12 +23,21 @@ namespace Vehicles.API.Data
 
         public DbSet<DocumentType> DocumentTypes { get; set; }
 
+        public DbSet<Vehicle> Vehicles { get; set; }
+
+        public DbSet<Detail> Details { get; set; }
+
+        public DbSet<History> Histories { get; set; }
+
+        public DbSet<VehiclePhoto> VehiclePhotos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<VehicleType>().HasIndex(x => x.Description).IsUnique();
             modelBuilder.Entity<Procedure>().HasIndex(x => x.Description).IsUnique();
             modelBuilder.Entity<Brand>().HasIndex(x => x.Description).IsUnique();
+            modelBuilder.Entity<Vehicle>().HasIndex(x => x.Plaque).IsUnique();
             modelBuilder.Entity<DocumentType>().HasIndex(x => x.Description).IsUnique();
         }
     }
