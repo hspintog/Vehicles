@@ -19,6 +19,10 @@ namespace Vehicles.API.Data.Entities
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
         public DateTime Date { get; set; }
 
+        [Display(Name = "Mecanico")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public User User { get; set; }
+
         public ICollection<Detail> Details { get; set; }
 
         [Display(Name = "# Detalles")]
