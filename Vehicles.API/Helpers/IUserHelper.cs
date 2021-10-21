@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Vehicles.API.Data.Entities;
 using Vehicles.API.Models;
+using Vehicles.Common.Enum;
 
 namespace Vehicles.API.Helpers
 {
@@ -15,6 +16,10 @@ namespace Vehicles.API.Helpers
         Task<User> GetUserAsync(Guid id);
 
         Task<IdentityResult> AddUserAsync(User user, string password);
+
+        Task<User> AddUserAsync(AddUserViewModel model, Guid imageId, UserType userType);
+
+        Task<string> GenerateEmailConfirmationTokenAsync(User user);
 
         Task<IdentityResult> UpdateUserAsync(User user);
 
