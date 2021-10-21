@@ -26,15 +26,11 @@ namespace Vehicles.API.Controllers
 
 
 
-        // GET: Procedures/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Procedures/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Brand brand)
@@ -67,7 +63,7 @@ namespace Vehicles.API.Controllers
             return View(brand);
         }
 
-        // GET: Procedure/Edit/5
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,9 +79,6 @@ namespace Vehicles.API.Controllers
             return View(brand);
         }
 
-        // POST: Procedure/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Brand brand)
@@ -123,7 +116,7 @@ namespace Vehicles.API.Controllers
             return View(brand);
         }
 
-        // GET: Brand/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
