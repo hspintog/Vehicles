@@ -35,5 +35,12 @@ namespace Vehicles.API.Helpers
 
         Task<IdentityResult> DeleteUserAsync(User user);
 
+        Task<IdentityResult> ChangePasswordAsync(User user, string oldPassword, string newPassword);
+
+        Task<IdentityResult> ConfirmEmailAsync(User user, string token);
+
+        Task<string> GeneratePasswordResetTokenAsync(User user);
+
+        Task<IdentityResult> ResetPasswordAsync(User user, string token, string password);
     }
 }
